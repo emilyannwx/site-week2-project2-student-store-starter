@@ -1,0 +1,30 @@
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    flex: 1;
+    margin-right: 40px; 
+
+  }
+
+  
+
+  /*
+  .search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: solid 2px var(--twitter-mid-gray);
+    background: var(--twitter-light-gray);
+    transition: all 0.2s ease;
+  }
+  .search-bar input:focus {
+    outline: none;
+    background: white;
+    border: solid 2px var(--twitter-blue);
+  }
+  .search-bar i {
+    transform: translateX(-25px);
+    color: var(--twitter-dark-gray);
+  }
+  */

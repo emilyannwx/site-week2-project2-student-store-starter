@@ -1,0 +1,139 @@
+
+/*
+nav {
+  background-color: lightblue;
+  height: 50px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+*/
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: lightblue;
+    height: 50px;
+    border-bottom: 1px solid var(--nav-border);
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+  }
+  .container {
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+  }
+
+
+  .navbar .container .logo{
+    margin-right: 50px;
+  }
+
+ 
+  /*****************
+     NAVBAR LINKS 
+  *****************/
+  .nav-links {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative
+  }
+  
+  .nav-link {
+    flex: 1;
+    height: 49px;
+    display: flex;
+    cursor: pointer;
+    padding: 0px 20px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border-bottom: solid 2px transparent;
+    transition: all 0.2s ease;
+    position: relative;
+  } 
+
+
+  .nav-link span {
+    margin-left: 5px;
+  }
+  .nav-link.active,
+  .nav-link:hover {
+    color: pink;
+    border-bottom: solid 2px green;
+  }
+  .nav-link.active i {
+    color: yellow;
+  }
+  .nav-link.active span::before {
+    top: 10px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    transform: translateX(-40px);
+    background: red;
+  }
+  
+  
+  
+  /*****************
+     NAVBAR SEARCH 
+  *****************/
+  .search-bar {
+    margin-left: auto;
+    display: flex;
+    align-items: center;  
+  }
+  .search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: solid 2px var(--twitter-mid-gray);
+    background: var(--twitter-light-gray);
+    transition: all 0.2s ease;
+  }
+  .search-bar input:focus {
+    outline: none;
+    background: white;
+    border: solid 2px var(--twitter-blue);
+  }
+  .search-bar i {
+    transform: translateX(-25px);
+    color: var(--twitter-dark-gray);
+  }
+ 
+  @media screen and (max-width: 1150px) {
+    .container {
+      max-width: 1000px;
+      padding: 0 15px;
+    }
+    
+  }
+  @media screen and (max-width: 1000px) {
+    .container {
+      max-width: 740px;
+    }
+    .search-bar {
+      display: none;
+    }
+    
+  }
+  @media screen and (max-width: 740px) {
+    .container {
+      max-width: 100vw;
+    }
+  }
+  

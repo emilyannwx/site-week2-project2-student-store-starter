@@ -1,10 +1,13 @@
 import * as React from "react"
+import ProductGrid from "../ProductGrid/ProductGrid"
 import "./Home.css"
 
-export default function Home() {
+export default function Home({products, isFetching}) {
+  console.log(products)
   return (
     <div className="home">
-      <p>Home</p>
+      <ProductGrid products = {products} isFetching = {isFetching}/>
+       
     </div>
   )
 }
