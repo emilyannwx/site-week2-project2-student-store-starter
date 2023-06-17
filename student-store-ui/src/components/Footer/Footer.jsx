@@ -4,11 +4,23 @@ export default function Footer() {
     return (
       <div className="Footer" id="Footer">
         <div className="content">
-          <h3>Footer</h3>
-          <div className="text">
-            <p>This is a footer</p>
-          </div>
+          <div className = "summary">
+          <ul className="list">
+            <li>
+              Home
+            </li>
+            <li>
+              About
+            </li>
+            <li>
+              Services
+            </li>
+            <li>
+              Support
+            </li>
+          </ul>
         </div>
+      </div>
       </div>
     )
   }

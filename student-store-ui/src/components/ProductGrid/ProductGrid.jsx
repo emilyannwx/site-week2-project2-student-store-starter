@@ -9,7 +9,7 @@ export default function ProductGrid({products =[]}) {
           <h3>Best Selling Products</h3>
           <div className="grid">
             {products.map((product) => (
-              <ProductCard product = {product}/>
+              <ProductCard product = {product} key = {product.id}/>
             ))}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import "./Header.css"
+import smile from "../../assets/smiley.png"
 
 
 export function Header() {
@@ -6,11 +7,13 @@ export function Header() {
       <header className="header">
         <div className = "content">
           <div className = "welcome">
-            <h1>Welcome!</h1>
-            <h4>Find Your Merch!</h4>
-            <p>We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
+            <div className="text">
+              <h1 className = "intro">Welcome!</h1>
+              <h1 className = "intro">Find Your Merch!</h1>
+              <p>We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
+            </div>
             <div className = "media">
-              <p>STORE IMAGE</p>
+            <img src = {smile} alt = "happy face"/>
             </div>
           </div>
         </div>

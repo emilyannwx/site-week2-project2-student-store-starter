@@ -1,0 +1,25 @@
+.Footer{
+    margin-top: 70px;
+    background-color:white;
+    margin-left: 70px;
+}
+
+
+.Footer .summary{
+    display: flex;
+    flex-direction:row;
+    background:#4A6670;
+    height:50px;
+    border: solid 1px gray
+}
+
+.summary .list{
+    column-count: 1;
+    column-gap: 300px;
+    font-size: 15px;
+    font-weight: 50;
+    color:white
+}
+.media img{
+    height:329px;
+}

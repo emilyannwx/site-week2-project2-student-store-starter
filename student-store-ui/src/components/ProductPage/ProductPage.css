@@ -1,0 +1,18 @@
+.product{
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.image-container{
+    max-width:100%;
+}
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.info-container{
+    text-align: center;
+}

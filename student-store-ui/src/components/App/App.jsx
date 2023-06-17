@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import axios from "axios"
 import { useEffect } from "react"
 import { useState } from "react"
@@ -8,69 +8,64 @@ import Navbar from "../Navbar/Navbar"
 import SearchBar  from "../SearchBar/SearchBar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
-import About from "../About/About"
-import Contact from "../Contact/Contact"
-import Footer from "../Footer/Footer"
+import ProductPage from "../ProductPage/ProductPage"
 import "./App.css"
 
 
 
 
 
-export const navLinks = [
-  { label: "Home", className: "nav-link active" },
-  { label: "About Us", className: "nav-link" },
-  { label: "Contact Us", className: "nav-link" },
-  { label: "Buy Now", className: "nav-link" },
-] 
-export default function App() {
 
+
+export default function App() {
+ 
   
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState (null);
-
+  const [selectedCategory, setCategory] = useState ("All Categories")
+  const [searchValue, setSearchValue] = useState("")
   const[products, setProducts] = useState([])
-
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setIsFetching(true);
+      setIsFetching(true)
 
       try {
-        const res = await axios.get("https://codepath-store-api.herokuapp.com/store");
+        const res = await axios.get("https://codepath-store-api.herokuapp.com/store")
         if (res?.data?.products) {
-          console.log(res?.data?.products)
-         await  setProducts(res.data.products);
+          setProducts(res.data.products)
         } else {
-          setError("Error fetching products.");
+          setError("Error fetching products.")
         }
       } catch (err) {
-        console.log(err);
-        const message = err?.response?.data?.error?.message;
-        setError(message ?? String(err));
+        console.log(err)
+        const message = err?.response?.data?.error?.message
+        setError(message ?? String(err))
       } finally {
-        setIsFetching(false);
+        setIsFetching(false)
       }
-    };
+    }
 
-    fetchProducts();
-  }, []);
-  console.log(products)
+    fetchProducts()
+  }, [])
+
+
 
  
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar navLinks = {navLinks} /> 
-          <Header products = {products} isFetching = {isFetching}/>
-          <SearchBar/>
           <Sidebar />
-          <Home />
-          <About/>
-          <Contact/>
-          <Footer/>
+          <Navbar  /> 
+          <Header/>
+          <SearchBar selectedCategory = {selectedCategory} setCategory = {setCategory}  products = {products} searchValue = {searchValue} setSearchValue = {setSearchValue}/> 
+          <Routes>
+            <Route path = "/" element = {<Home products = {products} isFetching = {isFetching} selectedCategory = {selectedCategory} setCategory = {setCategory} searchValue = {searchValue} setSearchValue = {setSearchValue}/>} />
+            <Route path = "/product/:productId" element = {<ProductPage products = {products}/>} />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>

@@ -1,0 +1,33 @@
+.Contact{
+    margin-top: 70px;
+    height:330px;
+    display:flex;
+    margin-left: 70px;
+}
+
+.Contact h3{
+    margin:10px 0 30px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Contact .summary{
+    display: flex;
+    flex-direction:row;
+    width:1370px;
+    background:#C3B59F;
+    height:300px;
+    border: solid 1px gray
+}
+
+.summary .info{
+    text-align: center;
+    margin-top:30px;
+    margin-left:15px;
+    font-weight:300px;
+    font-weight: 600;
+}
+.media img{
+    height:329px;
+}
