@@ -1,11 +1,10 @@
 import logo from "../../assets/codepath.logo.svg"
-import { Link } from "react-router-dom"
 import "./Navbar.css"
 
 
-export default function Navbar() {
+export default function Navbar({isOpen}) {
   return (
-    <nav className="Navbar">
+    <nav className={isOpen ? 'Navbar-sidebar' : 'Navbar'}>
       <div className="content">
         <div className="logo">
             <img src={logo} alt="codepath logo" />

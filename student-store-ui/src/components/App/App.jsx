@@ -25,6 +25,13 @@ export default function App() {
   const [selectedCategory, setCategory] = useState ("All Categories")
   const [searchValue, setSearchValue] = useState("")
   const[products, setProducts] = useState([])
+  const [isOpen, setOpen]= useState("false")
+
+ //opens sidebar
+  const handleClick = event => {
+    //  toggle isOpen state on click
+    setOpen(current => !current);
+  }
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -58,12 +65,12 @@ export default function App() {
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Sidebar />
-          <Navbar  /> 
+          <Sidebar isOpen = {isOpen} handleClick = {handleClick} />
+          <Navbar isOpen = {isOpen} /> 
           <Header/>
           <SearchBar selectedCategory = {selectedCategory} setCategory = {setCategory}  products = {products} searchValue = {searchValue} setSearchValue = {setSearchValue}/> 
           <Routes>
-            <Route path = "/" element = {<Home products = {products} isFetching = {isFetching} selectedCategory = {selectedCategory} setCategory = {setCategory} searchValue = {searchValue} setSearchValue = {setSearchValue}/>} />
+            <Route path = "/" element = {<Home products = {products} isFetching = {isFetching} selectedCategory = {selectedCategory} setCategory = {setCategory} searchValue = {searchValue} setSearchValue = {setSearchValue} isOpen = {isOpen}/>} />
             <Route path = "/product/:productId" element = {<ProductPage products = {products}/>} />
           </Routes>
         </main>
