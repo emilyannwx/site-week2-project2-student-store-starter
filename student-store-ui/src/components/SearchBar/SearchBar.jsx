@@ -18,15 +18,16 @@ const categories = ["All Categories", "Clothing", "Food", "Tech" ]
           </div>
         </div>
         <div className = "row-cat">
+          
           <ul className = "categories">
-            {/*iterates through category array */}
-         {categories.map((category,index) => (
+            {/*iterates through category array 
+        {/* {categories.map((category,index) => (
           <li className = {selectedCategory == category ? "selected" : ""} key = {category+index}>
             <button onClick={()  => setCategory(category)}>{category}</button>
           </li>
          )
-         )}
-          </ul>
+         )}*/}
+          </ul> 
         </div>
       </div>
     )

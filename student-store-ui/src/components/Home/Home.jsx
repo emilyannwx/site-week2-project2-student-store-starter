@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import "./Home.css"
 
-export default function Home({products, isFetching, selectedCategory, setCategory, searchValue, setSearchValue}) {
+export default function Home({products, isFetching, selectedCategory, setCategory, searchValue, setSearchValue, addToCart, removeFromCart, cart, setCart, subtotal}) {
    //creates new array for products that have the same category of the currently selected category
    // if category selected is "All Categories" returns array with all products
  const filteredByCategory = selectedCategory && selectedCategory.toLowerCase() !== "all categories"
@@ -23,11 +23,16 @@ export default function Home({products, isFetching, selectedCategory, setCategor
  //display "No Search Results when no product names match searchValue"
 
   
-  console.log(products)
   return (
     <div className="home">
       
-      <ProductGrid products = {productsDisplayed} isFetching = {isFetching}/> 
+      <ProductGrid products = {productsDisplayed} 
+      isFetching = {isFetching}  
+      addToCart = {addToCart} 
+      removeFromCart = {removeFromCart}
+      cart = {cart}
+      setCart ={setCart}
+      /> 
       <About/>
       <Contact/>
       <Footer/>

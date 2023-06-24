@@ -15,18 +15,30 @@
 }
 
 .sidebar-closed{
-  width: 60px; 
-}
-
-.sidebar-open{
-  width: 575px;
-  height: 100vh;
-  position: absolute;
+  width: 60px;
+  align-items:column;
+    flex:1;
+    transition: all .2s;
+    position:fixed;
+    z-index:100;
+    top: 0px;
+    height: 100vh;
     padding: 0;
     overflow-y: scroll;
     padding-bottom: 2rem;
     background-color: #4A6670;
     border-right: solid 1px white;
+}
+
+.sidebar-open{
+  width: 575px;
+  height: 464vh;
+  position: absolute;
+  padding: 0;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+  background-color: #4A6670;
+  border-right: solid 1px white;
 }
 .shopping-cart{
   text-align: center;

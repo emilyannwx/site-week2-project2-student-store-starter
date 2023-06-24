@@ -24,13 +24,14 @@
     width: 248px;
   }
    .product-container {
-    flex: 1;
-    display: flex;
+   
     border-top: solid 1px var(--border-color);
   }
 
-  info-container{
+  .ProductCard .info-container{
     text-decoration: none;
+    flex: 1;
+    display: flex
   }
    .info {
     flex: 1;
@@ -47,6 +48,24 @@
    .price {
     font-size: 14px;
     text-decoration: none;
+  }
+
+  .ProductCard .cart-btns{
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .ProductCard .btns i{
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    border: solid 1px #C3B59F;
+    color: #C3B59F;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
   }
 
   

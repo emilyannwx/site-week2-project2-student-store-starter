@@ -1,8 +1,11 @@
 import * as React from "react"
 import { useState } from "react"
-import "./Sidebar.css"
 
-export default function Sidebar({isOpen, handleClick}) {
+import "./Sidebar.css"
+import ShoppingCart from "../ShoppingCart/ShoppingCart"
+
+
+export default function Sidebar({isOpen, handleClick, cart, subtotal, tax, total, sumOfItems, cartisEmpty, email, name ,setEmail, setName}) {
 
   
 
@@ -18,8 +21,18 @@ export default function Sidebar({isOpen, handleClick}) {
           Shopping Cart
         </h3>
         <div className="cart">
-          No items added to cart yet. Start shopping now!
+          <ShoppingCart cart = {cart} subtotal ={subtotal}
+          tax = {tax}
+          total = {total}
+          sumOfItems = {sumOfItems}
+          cartisEmpty={cartisEmpty}
+          isOpen={isOpen}
+          email={email}
+          name={name}
+          setEmail = {setEmail}
+          setName={setName}/>
         </div>
+        
       </div>
     </section>
   )

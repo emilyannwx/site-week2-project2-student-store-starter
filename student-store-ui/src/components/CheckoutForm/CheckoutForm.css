@@ -1,0 +1,23 @@
+.error1-hidden{
+    display: none;
+}
+
+.error2-hidden{
+    display: none;
+}
+
+.error1{
+    color:red
+}
+
+.error2{
+    color:red
+}
+
+.info-hidden{
+display: none;
+}
+
+.receipt-hidden{
+    display: none;
+}
