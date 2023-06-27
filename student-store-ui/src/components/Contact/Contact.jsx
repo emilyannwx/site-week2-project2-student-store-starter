@@ -2,7 +2,7 @@ import "./Contact.css"
 import pic from "../../assets/contact.png"
 export default function Contact() {
     return (
-      <div className="Contact" id="contact">
+      <div className="Contact" id="Contact">
         <div className="content">
           <h3>Contact Us </h3>
           <div className = "summary">
